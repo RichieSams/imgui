@@ -1,7 +1,5 @@
 project(imgui)
 
-find_package(Vulkan REQUIRED)
-
 set(IMGUI_SRC
    backends/imgui_impl_glfw.cpp
    backends/imgui_impl_glfw.h
@@ -24,5 +22,4 @@ set(IMGUI_SRC
 add_library(imgui STATIC ${IMGUI_SRC})
 target_include_directories(imgui PUBLIC . backends)
 
-target_link_libraries(imgui glfw ${Vulkan_LIBRARIES})
-target_include_directories(imgui PUBLIC ${Vulkan_INCLUDE_DIRS})
+target_link_libraries(imgui glfw)
